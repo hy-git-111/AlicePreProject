@@ -1,5 +1,5 @@
 # 봇 방지때문에 로그인이 안됨
-# 로그인 전후 쿠키 출력해서 달라진점 확인해야함
+# 로그인 전후 쿠키 출력해서 달라진점 확인해야함 > 로그인 후 쿠키 user_data에 저장, 이후 자동 로그인에 사용해야함
 # 로그인 문제 해결되면 최근 본 목록 코드 작성해야함
 
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -22,7 +22,7 @@ random_wait = random.randrange(1, 6)
 class TestLoginPage:
 
     #@pytest.mark.skip(reason="아직 테스트케이스 발동 안함")
-    def test_open_login_page(self, driver: WebDriver):
+    def test_login(self, driver: WebDriver):
         try:
 
             MENU_LIST_XPATH = "//menu/li/a"
