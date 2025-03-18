@@ -2,6 +2,7 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import user_data
+import time
 
 
 class MainPage:
@@ -22,7 +23,11 @@ class MainPage:
     def search_single_item(self, item_name: str):
         search_input_box = self.driver.find_element(By.ID, self.SEARCH_INPUT_ID)
         # return search_input_box   # 검증 확인용
-        search_input_box.send_keys(item_name)
+
+        for char in item_name: 
+            search_input_box.send_keys(char)
+            time.sleep(0.3)
+        time.sleep(0.8)
         search_input_box.send_keys(Keys.ENTER) 
 
     def click_by_LINK_TEXT(self, link_text: str):
