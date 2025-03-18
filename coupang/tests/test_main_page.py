@@ -141,7 +141,7 @@ class TestMainPage:
             time.sleep(random_wait)
 
             # '노트북' 검색
-            main_page.search_single_item('노트북')
+            main_page.search_single_item('ㄴㅗㅌㅡㅂㅜㄱ')
             # wait = ws(driver, 10)
             wait.until(EC.presence_of_element_located((By.XPATH, ITEM_XPATH)))
             items = driver.find_elements(By.XPATH, ITEM_XPATH)  # list
