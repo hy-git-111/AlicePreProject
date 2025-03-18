@@ -1,6 +1,7 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import user_data
 
 
 class MainPage:
@@ -15,6 +16,7 @@ class MainPage:
     # 메인 페이지 열기
     def open(self):
         self.driver.get(self.url)
+        self.driver.add_cookie(user_data.cookies)
 
     # 검색창 찾기
     def search_single_item(self, item_name: str):
