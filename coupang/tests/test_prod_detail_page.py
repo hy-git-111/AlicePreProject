@@ -11,7 +11,7 @@ import pytest
 import time
 
 
-random_wait = random.randrange(1, 6)
+random_wait = random.randrange(2, 6)
 
 @pytest.mark.usefixtures("driver")
 class TestProdDetailPage:
@@ -70,7 +70,7 @@ class TestProdDetailPage:
             assert False
 
 # 장바구니에 담기
-    #@pytest.mark.skip(reason="아직 작성 완료 안됨")
+    #@pytest.mark.skip(reason="테스트 발동 안됨")
     def test_add_cart(self, driver: WebDriver):
         try:
             prod_detail_page = ProdDetailPage(driver)
